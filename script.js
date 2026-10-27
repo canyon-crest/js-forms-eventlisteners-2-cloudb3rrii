@@ -92,9 +92,10 @@ btn.addEventListener("click", ()=>{
 let calcTotal = document.getElementById("btnCalc");
 calcTotal.addEventListener("click", ()=>{
     const size = document.getElementsByName("rg");
+    let price = 0.00;
     for(let i=0; i<size.length; i++){
         if(size[i].checked){
-            let price = parseFloat(size[i].value);
+            price = parseFloat(size[i].value);
         }
     }
     let count = 0;
@@ -105,6 +106,7 @@ calcTotal.addEventListener("click", ()=>{
         }
     }
     count = count * 0.50;
+    let serviceFee = 0.00;
     let service = document.getElementById("serviceSelect").value;
     if (service=="dinein"){
         serviceFee = 0.00;
@@ -116,7 +118,7 @@ calcTotal.addEventListener("click", ()=>{
         serviceFee = 3.00;
     }
     
-    total = price + count + serviceFee;
+    let total = price + count + serviceFee;
     let name = document.getElementById("myInput");
     if (name.trim()==""){
         name = "Customer";
