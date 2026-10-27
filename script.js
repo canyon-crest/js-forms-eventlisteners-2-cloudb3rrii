@@ -101,7 +101,7 @@ calcTotal.addEventListener("click", ()=>{
     let count = 0;
     const toppings = document.getElementsByName("cb");
     for(let i=0; i<toppings.length; i++){
-        if(document.getElementById(toppings[i]).checked){
+        if(toppings[i].checked){
             count+=1;
         }
     }
@@ -119,8 +119,8 @@ calcTotal.addEventListener("click", ()=>{
     }
     
     let total = price + count + serviceFee;
-    let name = document.getElementById("myInput");
-    if (name.trim()==""){
+    let name = "";
+    if (document.getElementById("myInput").value.trim()==""){
         name = "Customer";
     }
     document.getElementById("myPara").innerHTML = name + ", your total is $" + total.toFixed(2);
@@ -132,6 +132,7 @@ clear.addEventListener("click", ()=>{
         document.getElementById("myPara").innerHTML= "";
         document.getElementById("serviceSelect").value = "dinein";
         document.getElementById("r3").checked = true;
+        const toppings = document.getElementsByName("cb");
         for(let i=0;i<toppings.length; i++){
             toppings[i].checked = false;
         }
