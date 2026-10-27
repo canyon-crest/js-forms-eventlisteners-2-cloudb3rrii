@@ -121,10 +121,16 @@ calcTotal.addEventListener("click", ()=>{
     if (name.trim()==""){
         name = "Customer";
     }
-    document.getElementById("myPara").innerHTML(name + ", your total is $" + total.toFixed(2));
+    document.getElementById("myPara").innerHTML = name + ", your total is $" + total.toFixed(2);
 });
 
 document.getElementById("clearBtn").addEventListener("click", ()=>{
         document.getElementById("myInput").innerHTML = "" ;
         document.getElementById("myPara").innerHTML="";
+        document.getElementById("serviceSelect").value = "dinein";
+        document.getElementById("r3").checked = "true";
+        for(let i=0;i<toppings.length; i++){
+            toppings[i].checked = false;
+        }
+
     });
