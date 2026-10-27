@@ -32,7 +32,7 @@
 let btn = document.getElementById("btnShout");
 btn.addEventListener("click", ()=>{
     let text = document.getElementById("shoutInput").value.toUpperCase()+"!";
-    document.getElementById("outShout").innerHTML(text)
+    document.getElementById("outShout").innerHTML = text;
 });
 
 // ============================================
@@ -125,6 +125,6 @@ calcTotal.addEventListener("click", ()=>{
 });
 
 document.getElementById("clearBtn").addEventListener("click", ()=>{
-        document.getElementById("myInput").innerHTML("");
-        document.getElementById("myPara").innerHTML("");
+        document.getElementById("myInput").innerHTML = "" ;
+        document.getElementById("myPara").innerHTML="";
     });
