@@ -94,12 +94,12 @@ calcTotal.addEventListener("click", ()=>{
     const size = document.getElementsByName("rg");
     for(let i=0;i<size.length; i++){
         if(document.getElementById(size[i]).checked){
-            let size = parseFloat(document.getElementById(size[i]).value);
+            let price = parseFloat(document.getElementById(size[i]).value);
         }
     }
     let count = 0;
     const toppings = document.getElementsByName("cb");
-    for(let i=0;i<toppings.length; i++){
+    for(let i=0; i<toppings.length; i++){
         if(document.getElementById(toppings[i]).checked){
             count+=1;
         }
@@ -116,7 +116,7 @@ calcTotal.addEventListener("click", ()=>{
         serviceFee = 3.00;
     }
     
-    total = size + count + serviceFee;
+    total = price + count + serviceFee;
     let name = document.getElementById("myInput");
     if (name.trim()==""){
         name = "Customer";
@@ -124,9 +124,10 @@ calcTotal.addEventListener("click", ()=>{
     document.getElementById("myPara").innerHTML = name + ", your total is $" + total.toFixed(2);
 });
 
-document.getElementById("clearBtn").addEventListener("click", ()=>{
-        document.getElementById("myInput").innerHTML = "" ;
-        document.getElementById("myPara").innerHTML="";
+clear = document.getElementById("clearBtn");
+clear.addEventListener("click", ()=>{
+        document.getElementById("myInput").innerHTML = "";
+        document.getElementById("myPara").innerHTML= "";
         document.getElementById("serviceSelect").value = "dinein";
         document.getElementById("r3").checked = "true";
         for(let i=0;i<toppings.length; i++){
