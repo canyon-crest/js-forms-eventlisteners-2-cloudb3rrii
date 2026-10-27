@@ -31,7 +31,7 @@
 
 let btn = document.getElementById("btnShout");
 btn.addEventListener("click", ()=>{
-    let text = document.getElementById("shoutInput").value+"!";
+    let text = document.getElementById("shoutInput").value.toUpperCase()+"!";
     document.getElementById("outShout").innerHTML(text)
 });
 
