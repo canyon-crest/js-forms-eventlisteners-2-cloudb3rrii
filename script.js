@@ -92,9 +92,9 @@ btn.addEventListener("click", ()=>{
 let calcTotal = document.getElementById("btnCalc");
 calcTotal.addEventListener("click", ()=>{
     const size = document.getElementsByName("rg");
-    for(let i=0;i<size.length; i++){
-        if(document.getElementById(size[i]).checked){
-            let price = parseFloat(document.getElementById(size[i]).value);
+    for(let i=0; i<size.length; i++){
+        if(size[i].checked){
+            let price = parseFloat(size[i].value);
         }
     }
     let count = 0;
@@ -129,7 +129,7 @@ clear.addEventListener("click", ()=>{
         document.getElementById("myInput").value = "";
         document.getElementById("myPara").innerHTML= "";
         document.getElementById("serviceSelect").value = "dinein";
-        document.getElementById("r3").checked = "true";
+        document.getElementById("r3").checked = true;
         for(let i=0;i<toppings.length; i++){
             toppings[i].checked = false;
         }
